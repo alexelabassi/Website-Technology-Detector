@@ -1,0 +1,25 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local editor settings
+.idea/
+.vscode/
+
+# Local environment configuration
+.env
+.env.*
+!.env.example
+
+# Generated scan reports and submission archive
+/report.json
+/reports/
+/website-technology-detector.zip
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini

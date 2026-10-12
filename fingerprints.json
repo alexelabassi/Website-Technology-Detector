@@ -1,0 +1,1368 @@
+{
+  "schema_version": 1,
+  "provenance": "Original fingerprints authored for this project. No third-party fingerprint dataset is bundled.",
+  "technologies": [
+    {
+      "name": "Shopify",
+      "category": "E-commerce",
+      "rules": [
+        {
+          "id": "shopify-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.shopify\\.com(?::\\d+)?/(?:s/|shopifycloud/)"
+        },
+        {
+          "id": "shopify-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.shopify\\.com(?::\\d+)?/(?:s/|shopifycloud/)"
+        },
+        {
+          "id": "shopify-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Shopify.shop"
+        },
+        {
+          "id": "shopify-4",
+          "signal": "headers",
+          "pattern": ".+",
+          "key": "x-shopid"
+        },
+        {
+          "id": "shopify-5",
+          "signal": "cookies",
+          "pattern": "^_shopify_(?:s|y)$"
+        }
+      ]
+    },
+    {
+      "name": "WooCommerce",
+      "category": "E-commerce",
+      "rules": [
+        {
+          "id": "woocommerce-1",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/[^?#]*wp-content/plugins/woocommerce/"
+        },
+        {
+          "id": "woocommerce-2",
+          "signal": "stylesheets",
+          "pattern": "^https?://[^/?#]+/[^?#]*wp-content/plugins/woocommerce/"
+        },
+        {
+          "id": "woocommerce-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "wc_add_to_cart_params"
+        }
+      ]
+    },
+    {
+      "name": "Magento",
+      "category": "E-commerce",
+      "rules": [
+        {
+          "id": "magento-1",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/[^?#]*/Magento_[A-Za-z]+/"
+        },
+        {
+          "id": "magento-2",
+          "signal": "stylesheets",
+          "pattern": "^https?://[^/?#]+/[^?#]*/Magento_[A-Za-z]+/"
+        },
+        {
+          "id": "magento-3",
+          "signal": "cookies",
+          "pattern": "^(?:mage-cache-sessid|mage-cache-storage|mage-messages)$"
+        }
+      ]
+    },
+    {
+      "name": "BigCommerce",
+      "category": "E-commerce",
+      "rules": [
+        {
+          "id": "bigcommerce-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\d+\\.bigcommerce\\.com(?::\\d+)?/s-[a-z0-9]+/"
+        },
+        {
+          "id": "bigcommerce-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\d+\\.bigcommerce\\.com(?::\\d+)?/s-[a-z0-9]+/"
+        },
+        {
+          "id": "bigcommerce-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "BCData"
+        },
+        {
+          "id": "bigcommerce-4",
+          "signal": "headers",
+          "pattern": ".+",
+          "key": "x-bc-store-version"
+        }
+      ]
+    },
+    {
+      "name": "PrestaShop",
+      "category": "E-commerce",
+      "rules": [
+        {
+          "id": "prestashop-1",
+          "signal": "meta",
+          "pattern": "^PrestaShop(?:\\s|$)",
+          "key": "generator"
+        },
+        {
+          "id": "prestashop-2",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "prestashop"
+        }
+      ]
+    },
+    {
+      "name": "Squarespace",
+      "category": "Website Builders",
+      "rules": [
+        {
+          "id": "squarespace-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*static\\d*\\.squarespace\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "squarespace-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*static\\d*\\.squarespace\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "squarespace-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Static.SQUARESPACE_CONTEXT"
+        },
+        {
+          "id": "squarespace-4",
+          "signal": "meta",
+          "pattern": "^Squarespace(?:\\s|$)",
+          "key": "generator"
+        }
+      ]
+    },
+    {
+      "name": "Wix",
+      "category": "Website Builders",
+      "rules": [
+        {
+          "id": "wix-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*static\\.parastorage\\.com(?::\\d+)?/services/"
+        },
+        {
+          "id": "wix-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*static\\.parastorage\\.com(?::\\d+)?/services/"
+        },
+        {
+          "id": "wix-3",
+          "signal": "meta",
+          "pattern": "^Wix\\.com(?:\\s|$)",
+          "key": "generator"
+        },
+        {
+          "id": "wix-4",
+          "signal": "headers",
+          "pattern": ".+",
+          "key": "x-wix-request-id"
+        }
+      ]
+    },
+    {
+      "name": "Webflow",
+      "category": "Website Builders",
+      "rules": [
+        {
+          "id": "webflow-1",
+          "signal": "meta",
+          "pattern": "^Webflow$",
+          "key": "generator"
+        },
+        {
+          "id": "webflow-2",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Webflow"
+        },
+        {
+          "id": "webflow-3",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:website-files\\.com|webflow\\.com)/[^?#]*webflow(?:\\.[a-z0-9]+)?\\.js(?:[?#]|$)"
+        }
+      ]
+    },
+    {
+      "name": "WordPress",
+      "category": "CMS",
+      "rules": [
+        {
+          "id": "wordpress-1",
+          "signal": "meta",
+          "pattern": "^WordPress(?:\\s|$)",
+          "key": "generator"
+        },
+        {
+          "id": "wordpress-2",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/[^?#]*wp-(?:content|includes)/"
+        },
+        {
+          "id": "wordpress-3",
+          "signal": "stylesheets",
+          "pattern": "^https?://[^/?#]+/[^?#]*wp-(?:content|includes)/"
+        }
+      ]
+    },
+    {
+      "name": "Drupal",
+      "category": "CMS",
+      "rules": [
+        {
+          "id": "drupal-1",
+          "signal": "meta",
+          "pattern": "^Drupal(?:\\s|$)",
+          "key": "generator"
+        },
+        {
+          "id": "drupal-2",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Drupal"
+        },
+        {
+          "id": "drupal-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "drupalSettings"
+        }
+      ]
+    },
+    {
+      "name": "Joomla",
+      "category": "CMS",
+      "rules": [
+        {
+          "id": "joomla-1",
+          "signal": "meta",
+          "pattern": "^Joomla!?(?:\\s|$)",
+          "key": "generator"
+        },
+        {
+          "id": "joomla-2",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Joomla"
+        }
+      ]
+    },
+    {
+      "name": "Ghost",
+      "category": "CMS",
+      "rules": [
+        {
+          "id": "ghost-1",
+          "signal": "meta",
+          "pattern": "^Ghost(?:\\s|$)",
+          "key": "generator"
+        },
+        {
+          "id": "ghost-2",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.jsdelivr\\.net(?::\\d+)?/ghost/(?:portal|sodo-search)@"
+        },
+        {
+          "id": "ghost-3",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.jsdelivr\\.net(?::\\d+)?/ghost/(?:portal|sodo-search)@"
+        }
+      ]
+    },
+    {
+      "name": "React",
+      "category": "JavaScript",
+      "sources": [
+        "https://github.com/facebook/react/blob/main/packages/react-dom-bindings/src/client/ReactDOMComponentTree.js"
+      ],
+      "rules": [
+        {
+          "id": "react-1",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "React"
+        },
+        {
+          "id": "react-2",
+          "signal": "dom",
+          "pattern": "^(?:__react(?:Fiber|Props|Container)\\$.+|_reactRootContainer)$"
+        }
+      ]
+    },
+    {
+      "name": "Next.js",
+      "category": "JavaScript",
+      "rules": [
+        {
+          "id": "next-js-1",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/[^?#]*_next/static/"
+        },
+        {
+          "id": "next-js-2",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "__NEXT_DATA__"
+        },
+        {
+          "id": "next-js-3",
+          "signal": "headers",
+          "pattern": "^Next\\.js$",
+          "key": "x-powered-by"
+        }
+      ]
+    },
+    {
+      "name": "Vue",
+      "category": "JavaScript",
+      "rules": [
+        {
+          "id": "vue-1",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Vue"
+        },
+        {
+          "id": "vue-2",
+          "signal": "dom",
+          "pattern": "^__vue(?:__|_app__|ParentComponent)$"
+        },
+        {
+          "id": "vue-3",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/(?:[^?#]*/)?vue(?:\\.global(?:\\.prod)?|\\.runtime(?:\\.global(?:\\.prod)?)?)?(?:[-.]\\d+(?:\\.\\d+)*)?(?:\\.min)?\\.js(?:[?#]|$)"
+        }
+      ]
+    },
+    {
+      "name": "Nuxt",
+      "category": "JavaScript",
+      "rules": [
+        {
+          "id": "nuxt-1",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "__NUXT__"
+        },
+        {
+          "id": "nuxt-2",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/[^?#]*_nuxt/"
+        }
+      ]
+    },
+    {
+      "name": "Angular",
+      "category": "JavaScript",
+      "rules": [
+        {
+          "id": "angular-1",
+          "signal": "html",
+          "pattern": "<[a-z][^>]*\\sng-version\\s*=\\s*[\"'][\\d.]+[\"']"
+        },
+        {
+          "id": "angular-2",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "getAllAngularRootElements"
+        }
+      ]
+    },
+    {
+      "name": "jQuery",
+      "category": "JavaScript",
+      "rules": [
+        {
+          "id": "jquery-1",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "jQuery.fn.jquery"
+        },
+        {
+          "id": "jquery-2",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/(?:[^?#]*/)?jquery(?:[-.]\\d+(?:\\.\\d+)*)?(?:\\.min)?\\.js(?:[?#]|$)"
+        }
+      ]
+    },
+    {
+      "name": "Alpine.js",
+      "category": "JavaScript",
+      "rules": [
+        {
+          "id": "alpine-js-1",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Alpine.version"
+        },
+        {
+          "id": "alpine-js-2",
+          "signal": "scripts",
+          "pattern": "^https?://(?:cdn\\.jsdelivr\\.net/npm|unpkg\\.com)/alpinejs(?:@|/)"
+        }
+      ]
+    },
+    {
+      "name": "SvelteKit",
+      "category": "JavaScript",
+      "rules": [
+        {
+          "id": "sveltekit-1",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/[^?#]*_app/immutable/(?:entry|chunks|nodes)/[^?#]+\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "sveltekit-2",
+          "signal": "html",
+          "pattern": "<[a-z][^>]*\\sdata-sveltekit-(?:preload-data|preload-code)\\s*="
+        }
+      ]
+    },
+    {
+      "name": "Ember.js",
+      "category": "JavaScript",
+      "rules": [
+        {
+          "id": "ember-js-1",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Ember.VERSION"
+        },
+        {
+          "id": "ember-js-2",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/(?:[^?#]*/)?ember(?:[-.]\\d+(?:\\.\\d+)*)?(?:\\.min)?\\.js(?:[?#]|$)"
+        }
+      ]
+    },
+    {
+      "name": "Lodash",
+      "category": "JavaScript",
+      "rules": [
+        {
+          "id": "lodash-1",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "_.runInContext"
+        },
+        {
+          "id": "lodash-2",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/(?:[^?#]*/)?lodash(?:[-.]\\d+(?:\\.\\d+)*)?(?:\\.min)?\\.js(?:[?#]|$)"
+        }
+      ]
+    },
+    {
+      "name": "GSAP",
+      "category": "JavaScript",
+      "rules": [
+        {
+          "id": "gsap-1",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "gsap.version"
+        },
+        {
+          "id": "gsap-2",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/(?:[^?#]*/)?gsap(?:[-.]\\d+(?:\\.\\d+)*)?(?:\\.min)?\\.js(?:[?#]|$)"
+        }
+      ]
+    },
+    {
+      "name": "Bootstrap",
+      "category": "UI Libraries",
+      "rules": [
+        {
+          "id": "bootstrap-1",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/(?:[^?#]*/)?bootstrap(?:\\.bundle)?(?:[-.]\\d+(?:\\.\\d+)*)?(?:\\.min)?\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "bootstrap-2",
+          "signal": "stylesheets",
+          "pattern": "^https?://[^/?#]+/(?:[^?#]*/)?bootstrap(?:[-.]\\d+(?:\\.\\d+)*)?(?:\\.min)?\\.css(?:[?#]|$)"
+        },
+        {
+          "id": "bootstrap-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "bootstrap.Modal"
+        }
+      ]
+    },
+    {
+      "name": "Font Awesome",
+      "category": "UI Libraries",
+      "rules": [
+        {
+          "id": "font-awesome-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*kit\\.fontawesome\\.com(?::\\d+)?/[a-z0-9]+\\.js"
+        },
+        {
+          "id": "font-awesome-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*kit\\.fontawesome\\.com(?::\\d+)?/[a-z0-9]+\\.js"
+        },
+        {
+          "id": "font-awesome-3",
+          "signal": "stylesheets",
+          "pattern": "^https?://[^/?#]+/[^?#]*(?:font-awesome|fontawesome)[^?#]*\\.css(?:[?#]|$)"
+        },
+        {
+          "id": "font-awesome-4",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "FontAwesome"
+        }
+      ]
+    },
+    {
+      "name": "Google Analytics",
+      "category": "Analytics",
+      "sources": [
+        "https://developers.google.com/analytics/devguides/collection/ga4"
+      ],
+      "rules": [
+        {
+          "id": "google-analytics-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*www\\.googletagmanager\\.com(?::\\d+)?/gtag/js\\?(?:[^#]*&)?id=(?:G-[A-Z0-9]+|UA-\\d+-\\d+)(?:&|$)"
+        },
+        {
+          "id": "google-analytics-2",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:www\\.)?google-analytics\\.com(?::\\d+)?/(?:analytics\\.js|ga\\.js|(?:g/|j/)?collect)(?:[/?]|$)"
+        },
+        {
+          "id": "google-analytics-3",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:www\\.)?google-analytics\\.com(?::\\d+)?/(?:analytics\\.js|ga\\.js|(?:g/|j/)?collect)(?:[/?]|$)"
+        },
+        {
+          "id": "google-analytics-4",
+          "signal": "cookies",
+          "pattern": "^_ga(?:_[A-Z0-9]+)?$"
+        }
+      ]
+    },
+    {
+      "name": "Google Tag Manager",
+      "category": "Analytics",
+      "rules": [
+        {
+          "id": "google-tag-manager-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*www\\.googletagmanager\\.com(?::\\d+)?/(?:gtm\\.js|ns\\.html)\\?(?:[^#]*&)?id=GTM-[A-Z0-9]+(?:&|$)"
+        },
+        {
+          "id": "google-tag-manager-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*www\\.googletagmanager\\.com(?::\\d+)?/(?:gtm\\.js|ns\\.html)\\?(?:[^#]*&)?id=GTM-[A-Z0-9]+(?:&|$)"
+        }
+      ]
+    },
+    {
+      "name": "Meta Pixel",
+      "category": "Advertising",
+      "rules": [
+        {
+          "id": "meta-pixel-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*connect\\.facebook\\.net(?::\\d+)?/[^?#]*fbevents\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "meta-pixel-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*connect\\.facebook\\.net(?::\\d+)?/[^?#]*fbevents\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "meta-pixel-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "fbq"
+        },
+        {
+          "id": "meta-pixel-4",
+          "signal": "cookies",
+          "pattern": "^_fbp$"
+        }
+      ]
+    },
+    {
+      "name": "Hotjar",
+      "category": "Analytics",
+      "rules": [
+        {
+          "id": "hotjar-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:static|script)\\.hotjar\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "hotjar-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:static|script)\\.hotjar\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "hotjar-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "hj"
+        },
+        {
+          "id": "hotjar-4",
+          "signal": "cookies",
+          "pattern": "^_hj(?:SessionUser|Session)_\\d+$"
+        }
+      ]
+    },
+    {
+      "name": "Microsoft Clarity",
+      "category": "Analytics",
+      "rules": [
+        {
+          "id": "microsoft-clarity-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*clarity\\.ms(?::\\d+)?/tag/"
+        },
+        {
+          "id": "microsoft-clarity-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*clarity\\.ms(?::\\d+)?/tag/"
+        },
+        {
+          "id": "microsoft-clarity-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "clarity"
+        },
+        {
+          "id": "microsoft-clarity-4",
+          "signal": "cookies",
+          "pattern": "^_cl(?:ck|sk)$"
+        }
+      ]
+    },
+    {
+      "name": "Segment",
+      "category": "Analytics",
+      "rules": [
+        {
+          "id": "segment-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.segment\\.com(?::\\d+)?/analytics\\.js/"
+        },
+        {
+          "id": "segment-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.segment\\.com(?::\\d+)?/analytics\\.js/"
+        },
+        {
+          "id": "segment-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "analytics.VERSION"
+        }
+      ]
+    },
+    {
+      "name": "Mixpanel",
+      "category": "Analytics",
+      "rules": [
+        {
+          "id": "mixpanel-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.mxpnl\\.com(?::\\d+)?/libs/mixpanel"
+        },
+        {
+          "id": "mixpanel-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.mxpnl\\.com(?::\\d+)?/libs/mixpanel"
+        },
+        {
+          "id": "mixpanel-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "mixpanel.track"
+        },
+        {
+          "id": "mixpanel-4",
+          "signal": "cookies",
+          "pattern": "^mp_[a-f0-9]+_mixpanel$"
+        }
+      ]
+    },
+    {
+      "name": "Amplitude",
+      "category": "Analytics",
+      "rules": [
+        {
+          "id": "amplitude-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.amplitude\\.com(?::\\d+)?/(?:libs/|script/)"
+        },
+        {
+          "id": "amplitude-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.amplitude\\.com(?::\\d+)?/(?:libs/|script/)"
+        },
+        {
+          "id": "amplitude-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "amplitude.getInstance"
+        },
+        {
+          "id": "amplitude-4",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "amplitude.track"
+        }
+      ]
+    },
+    {
+      "name": "Plausible",
+      "category": "Analytics",
+      "rules": [
+        {
+          "id": "plausible-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*plausible\\.io(?::\\d+)?/js/(?:script|pa-)[^?#]*\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "plausible-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*plausible\\.io(?::\\d+)?/js/(?:script|pa-)[^?#]*\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "plausible-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "plausible"
+        }
+      ]
+    },
+    {
+      "name": "Matomo",
+      "category": "Analytics",
+      "rules": [
+        {
+          "id": "matomo-1",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/(?:[^?#]*/)?matomo(?:\\.min)?\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "matomo-2",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Matomo"
+        },
+        {
+          "id": "matomo-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Piwik"
+        },
+        {
+          "id": "matomo-4",
+          "signal": "cookies",
+          "pattern": "^_pk_(?:id|ses)\\.\\d+\\.[a-z0-9]+$"
+        }
+      ]
+    },
+    {
+      "name": "Heap",
+      "category": "Analytics",
+      "rules": [
+        {
+          "id": "heap-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.heapanalytics\\.com(?::\\d+)?/js/heap-"
+        },
+        {
+          "id": "heap-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.heapanalytics\\.com(?::\\d+)?/js/heap-"
+        },
+        {
+          "id": "heap-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "heap.track"
+        }
+      ]
+    },
+    {
+      "name": "PostHog",
+      "category": "Analytics",
+      "rules": [
+        {
+          "id": "posthog-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:[a-z0-9-]+\\.)?posthog\\.com(?::\\d+)?/(?:static/|i/|e/)"
+        },
+        {
+          "id": "posthog-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:[a-z0-9-]+\\.)?posthog\\.com(?::\\d+)?/(?:static/|i/|e/)"
+        },
+        {
+          "id": "posthog-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "posthog.capture"
+        }
+      ]
+    },
+    {
+      "name": "Adobe Analytics",
+      "category": "Analytics",
+      "rules": [
+        {
+          "id": "adobe-analytics-1",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "s_gi"
+        },
+        {
+          "id": "adobe-analytics-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:[a-z0-9-]+\\.)?(?:omtrdc\\.net|2o7\\.net)(?::\\d+)?/b/ss/"
+        },
+        {
+          "id": "adobe-analytics-3",
+          "signal": "scripts",
+          "pattern": "^https?://[^/?#]+/(?:[^?#]*/)?AppMeasurement(?:\\.min)?\\.js(?:[?#]|$)"
+        }
+      ]
+    },
+    {
+      "name": "Klaviyo",
+      "category": "Marketing Automation",
+      "rules": [
+        {
+          "id": "klaviyo-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*static\\.klaviyo\\.com(?::\\d+)?/onsite/"
+        },
+        {
+          "id": "klaviyo-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*static\\.klaviyo\\.com(?::\\d+)?/onsite/"
+        },
+        {
+          "id": "klaviyo-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "klaviyo"
+        },
+        {
+          "id": "klaviyo-4",
+          "signal": "cookies",
+          "pattern": "^__kla_id$"
+        }
+      ]
+    },
+    {
+      "name": "HubSpot",
+      "category": "Marketing Automation",
+      "rules": [
+        {
+          "id": "hubspot-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*js(?:-eu1)?\\.(?:hs-scripts|hs-analytics)\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "hubspot-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*js(?:-eu1)?\\.(?:hs-scripts|hs-analytics)\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "hubspot-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "_hsq"
+        },
+        {
+          "id": "hubspot-4",
+          "signal": "cookies",
+          "pattern": "^hubspotutk$"
+        }
+      ]
+    },
+    {
+      "name": "Mailchimp",
+      "category": "Marketing Automation",
+      "rules": [
+        {
+          "id": "mailchimp-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*chimpstatic\\.com(?::\\d+)?/mcjs-connected/js/"
+        },
+        {
+          "id": "mailchimp-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*chimpstatic\\.com(?::\\d+)?/mcjs-connected/js/"
+        },
+        {
+          "id": "mailchimp-3",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*s3\\.amazonaws\\.com(?::\\d+)?/downloads\\.mailchimp\\.com/js/mc-validate\\.js"
+        },
+        {
+          "id": "mailchimp-4",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*s3\\.amazonaws\\.com(?::\\d+)?/downloads\\.mailchimp\\.com/js/mc-validate\\.js"
+        }
+      ]
+    },
+    {
+      "name": "ActiveCampaign",
+      "category": "Marketing Automation",
+      "rules": [
+        {
+          "id": "activecampaign-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*trackcmp\\.net(?::\\d+)?/(?:visit|event)(?:[/?]|$)"
+        },
+        {
+          "id": "activecampaign-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*trackcmp\\.net(?::\\d+)?/(?:visit|event)(?:[/?]|$)"
+        },
+        {
+          "id": "activecampaign-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "vgo"
+        }
+      ]
+    },
+    {
+      "name": "Omnisend",
+      "category": "Marketing Automation",
+      "rules": [
+        {
+          "id": "omnisend-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*omnisnippet1\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "omnisend-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*omnisnippet1\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "omnisend-3",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*omnisrc\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "omnisend-4",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*omnisrc\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "omnisend-5",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "omnisend"
+        }
+      ]
+    },
+    {
+      "name": "TikTok Pixel",
+      "category": "Advertising",
+      "rules": [
+        {
+          "id": "tiktok-pixel-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*analytics\\.tiktok\\.com(?::\\d+)?/i18n/pixel/"
+        },
+        {
+          "id": "tiktok-pixel-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*analytics\\.tiktok\\.com(?::\\d+)?/i18n/pixel/"
+        },
+        {
+          "id": "tiktok-pixel-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "ttq"
+        }
+      ]
+    },
+    {
+      "name": "Pinterest Tag",
+      "category": "Advertising",
+      "rules": [
+        {
+          "id": "pinterest-tag-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*s\\.pinimg\\.com(?::\\d+)?/ct/core\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "pinterest-tag-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*s\\.pinimg\\.com(?::\\d+)?/ct/core\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "pinterest-tag-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "pintrk"
+        }
+      ]
+    },
+    {
+      "name": "Lucky Orange",
+      "category": "Analytics",
+      "sources": [
+        "https://developers.luckyorange.com/libraries/browser"
+      ],
+      "rules": [
+        {
+          "id": "lucky-orange-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:cdn|tools)\\.luckyorange\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "lucky-orange-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:cdn|tools)\\.luckyorange\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "lucky-orange-4",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "__lo_site_id"
+        },
+        {
+          "id": "lucky-orange-5",
+          "signal": "globals",
+          "key": "LO.$internal.ready",
+          "pattern": "^present$"
+        }
+      ]
+    },
+    {
+      "name": "Triple Whale",
+      "category": "Analytics",
+      "sources": [
+        "https://kb.triplewhale.com/en/articles/6266255-how-to-add-the-triple-pixel-to-a-headless-business-or-custom-website"
+      ],
+      "rules": [
+        {
+          "id": "triple-whale-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:[a-z0-9-]+\\.)?triplewhale\\.com(?::\\d+)?/(?:[^?#]*/)?(?:triple(?:-pixel)?|pixel)[^?#]*\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "triple-whale-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:[a-z0-9-]+\\.)?triplewhale\\.com(?::\\d+)?/(?:[^?#]*/)?(?:triple(?:-pixel)?|pixel)[^?#]*\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "triple-whale-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "TriplePixel"
+        },
+        {
+          "id": "triple-whale-4",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "TriplePixelData"
+        }
+      ]
+    },
+    {
+      "name": "Northbeam",
+      "category": "Analytics",
+      "rules": [
+        {
+          "id": "northbeam-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:j|cdn)\\.northbeam\\.io(?::\\d+)?/(?:[^?#]*/)?nb(?:\\.min)?\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "northbeam-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*(?:j|cdn)\\.northbeam\\.io(?::\\d+)?/(?:[^?#]*/)?nb(?:\\.min)?\\.js(?:[?#]|$)"
+        }
+      ]
+    },
+    {
+      "name": "Elevar",
+      "category": "Analytics",
+      "sources": [
+        "https://dev.getelevar.com/guides/api/browser-setup/debug-mode"
+      ],
+      "rules": [
+        {
+          "id": "elevar-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*shopify-gtm-suite\\.getelevar\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "elevar-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*shopify-gtm-suite\\.getelevar\\.com(?::\\d+)?/"
+        },
+        {
+          "id": "elevar-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Elevar"
+        },
+        {
+          "id": "elevar-4",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "ElevarDebugMode"
+        }
+      ]
+    },
+    {
+      "name": "Intercom",
+      "category": "Customer Support",
+      "rules": [
+        {
+          "id": "intercom-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*widget\\.intercom\\.io(?::\\d+)?/widget/"
+        },
+        {
+          "id": "intercom-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*widget\\.intercom\\.io(?::\\d+)?/widget/"
+        },
+        {
+          "id": "intercom-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Intercom"
+        },
+        {
+          "id": "intercom-4",
+          "signal": "cookies",
+          "pattern": "^intercom-(?:id|session)-[a-z0-9]+$"
+        }
+      ]
+    },
+    {
+      "name": "Zendesk",
+      "category": "Customer Support",
+      "rules": [
+        {
+          "id": "zendesk-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*static\\.zdassets\\.com(?::\\d+)?/ekr/snippet\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "zendesk-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*static\\.zdassets\\.com(?::\\d+)?/ekr/snippet\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "zendesk-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "zE"
+        }
+      ]
+    },
+    {
+      "name": "Tawk.to",
+      "category": "Customer Support",
+      "rules": [
+        {
+          "id": "tawk-to-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*embed\\.tawk\\.to(?::\\d+)?/"
+        },
+        {
+          "id": "tawk-to-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*embed\\.tawk\\.to(?::\\d+)?/"
+        },
+        {
+          "id": "tawk-to-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Tawk_API"
+        }
+      ]
+    },
+    {
+      "name": "Crisp",
+      "category": "Customer Support",
+      "rules": [
+        {
+          "id": "crisp-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*client\\.crisp\\.chat(?::\\d+)?/l\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "crisp-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*client\\.crisp\\.chat(?::\\d+)?/l\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "crisp-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "$crisp"
+        }
+      ]
+    },
+    {
+      "name": "Cloudflare",
+      "category": "Infrastructure",
+      "rules": [
+        {
+          "id": "cloudflare-1",
+          "signal": "headers",
+          "pattern": "^cloudflare$",
+          "key": "server"
+        },
+        {
+          "id": "cloudflare-2",
+          "signal": "headers",
+          "pattern": "^[a-f0-9]+-[A-Z]{3}$",
+          "key": "cf-ray"
+        }
+      ]
+    },
+    {
+      "name": "Nginx",
+      "category": "Infrastructure",
+      "rules": [
+        {
+          "id": "nginx-1",
+          "signal": "headers",
+          "pattern": "^nginx(?:/[\\d.]+)?$",
+          "key": "server"
+        }
+      ]
+    },
+    {
+      "name": "Apache",
+      "category": "Infrastructure",
+      "rules": [
+        {
+          "id": "apache-1",
+          "signal": "headers",
+          "pattern": "^Apache(?:/|\\s|$)",
+          "key": "server"
+        }
+      ]
+    },
+    {
+      "name": "Vercel",
+      "category": "Infrastructure",
+      "rules": [
+        {
+          "id": "vercel-1",
+          "signal": "headers",
+          "pattern": "^Vercel$",
+          "key": "server"
+        },
+        {
+          "id": "vercel-2",
+          "signal": "headers",
+          "pattern": ".+",
+          "key": "x-vercel-id"
+        }
+      ]
+    },
+    {
+      "name": "Netlify",
+      "category": "Infrastructure",
+      "rules": [
+        {
+          "id": "netlify-1",
+          "signal": "headers",
+          "pattern": "^Netlify$",
+          "key": "server"
+        },
+        {
+          "id": "netlify-2",
+          "signal": "headers",
+          "pattern": ".+",
+          "key": "x-nf-request-id"
+        }
+      ]
+    },
+    {
+      "name": "OneTrust",
+      "category": "Consent Management",
+      "rules": [
+        {
+          "id": "onetrust-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.cookielaw\\.org(?::\\d+)?/scripttemplates/otSDKStub\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "onetrust-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*cdn\\.cookielaw\\.org(?::\\d+)?/scripttemplates/otSDKStub\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "onetrust-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "OneTrust"
+        },
+        {
+          "id": "onetrust-4",
+          "signal": "cookies",
+          "pattern": "^OptanonConsent$"
+        }
+      ]
+    },
+    {
+      "name": "Cookiebot",
+      "category": "Consent Management",
+      "rules": [
+        {
+          "id": "cookiebot-1",
+          "signal": "scripts",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*consent\\.cookiebot\\.com(?::\\d+)?/uc\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "cookiebot-2",
+          "signal": "network",
+          "pattern": "^https?://(?:[a-z0-9-]+\\.)*consent\\.cookiebot\\.com(?::\\d+)?/uc\\.js(?:[?#]|$)"
+        },
+        {
+          "id": "cookiebot-3",
+          "signal": "globals",
+          "pattern": "^present$",
+          "key": "Cookiebot"
+        }
+      ]
+    }
+  ]
+}
